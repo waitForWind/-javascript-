@@ -1,0 +1,79 @@
+body{
+	margin: 0;
+	background: #000;
+}
+.big{
+	margin: 10px auto;
+	width: 800px;
+	position: relative;
+	height: auto!important;
+	min-height: 400px;
+	overflow: hidden;
+	text-align: center;
+}
+.big.loading{
+	background: url(img/loading.gif) center center no-repeat;
+}
+div.titleBG{
+	height: 50px;
+	width: 100%;
+	// line-height: 50px;
+	font: 18px/50px "MicroSoft YaHei";
+	text-align: center;
+	background: #000;
+	opacity: 0.6;
+	filter: alpha(opacity=60);
+	position: absolute;
+	top: 0;
+
+}
+
+.maskL{
+	left: 0;
+}
+.maskR{
+	right: 0;
+}
+.maskR,.maskL{
+	// cursor: pointer;
+	background: white;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	width: 400px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+}
+.btnL,.btnR{
+	background: url(img/btn.png);
+	width: 39px;
+	height: 80px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	cursor: pointer;
+}
+.btnR{
+	position: absolute;
+	right: 0;
+	background-position: 39px 0;
+
+}
+.btnL,.btnR{
+	position: absolute;
+	// left: 0;
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
+}
+.btnL{
+	left: 0;
+}
+.btnR{
+	right: 0;
+}
+.titleText{
+	color: white;
+	font-family: "Arial", "MicroSoft YaHei", "SimHei";
+	opacity: 1!important;
+	filter: alpha(opacity=100)!important;
+}

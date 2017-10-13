@@ -1,0 +1,42 @@
+body,ul,li,p{
+	padding:0;
+	margin: 0;
+}
+
+body,div,ul,li,p{margin:0;padding:0;}
+body{color:#666;font:12px/1.5 Arial;}
+ul{list-style-type:none;}
+.hint,#stars{
+	float: left;
+}
+#stars{
+	margin: 0 10px;
+}
+#stars li{
+	float: left;
+	width: 24px;
+	height: 19px;
+	background: url(img/star.png) no-repeat;
+}
+#stars li.on{
+	background-position: 0 -28px;
+}
+#stars li a{
+	visibility: hidden;
+}
+#container{
+	width: 600px;
+	margin: 10px auto;
+}
+
+#panel{
+	width: 179px;
+	height: 67px;
+	clear: both;
+	position: absolute;
+	display: none;
+	background: url(img/icon.gif)  top left no-repeat;
+	padding: 10px 10px 0;
+	top: 30px;
+	box-sizing: border-box;
+}

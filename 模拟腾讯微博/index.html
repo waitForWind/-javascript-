@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<title>模拟腾讯微博效果</title>
+</head>
+
+<body>
+	<div id="main">
+		<div id="header" >
+			<h2 class="title">来，说说你在干什么，想什么...</h2>
+			<div id="faces">
+				<img src="img/face1.gif" alt="face1" class="current" />
+				<img src="img/face2.gif" alt="face2" />
+				<img src="img/face3.gif" alt="face3" />
+				<img src="img/face4.gif" alt="face4" />
+				<img src="img/face5.gif" alt="face5" />
+				<img src="img/face6.gif" alt="face6" />
+				<img src="img/face7.gif" alt="face7" />
+				<img src="img/face8.gif" alt="face8" />
+			</div>
+			<form id="cForm">
+				<input type="text" name="username" id="username"/>
+				<textarea id="conBox"></textarea>
+				<div id="formFooter">
+					<p id="limit">
+						<span class="limitText">还能输入</span>
+						<span class="limitNum"></span>
+						<span class="limitText">字</span>
+					</p>
+					<input type="submit" value="" />
+				</div>
+			</form>
+		</div>
+		<div id="fbody">
+			<div class="colorBlock">
+				<span class="sTitle">大家在说</span>
+			</div>
+			<ul class="commentList">
+				<li class="item">
+					<img src="img/face.gif" class="userImg" />
+					<div class="userContent">
+						<a href="javascript:;" class="nickname">日丶久生情</a> <span class="info">新增删除功能</span>
+						<div class="time"><span>07月05日 15:14</span> <a href="javascript:;" class="del">删除</a></div>
+					</div>
+				</li>
+				<li class="item">
+					<img src="img/face.gif" class="userImg" />
+					<div class="userContent">
+						<a href="javascript:;" class="nickname">日丶久生情</a> <span class="info">新增广播功能</span>
+						<div class="time"><span>07月05日 15:14</span> <a href="javascript:;" class="del">删除</a></div>
+					</div>
+				</li>
+				<li class="item">
+					<img src="img/face.gif" class="userImg" />
+					<div class="userContent">
+						<a href="javascript:;" class="nickname">日丶久生情</a> <span class="info">新增ctrl+ Entry快捷发送功能</span>
+						<div class="time"><span>07月05日 15:14</span> <a href="javascript:;" class="del">删除</a></div>
+					</div>
+				</li>
+				<li class="item">
+					<img src="img/face.gif" class="userImg" />
+					<div class="userContent">
+						<a href="javascript:;" class="nickname">日丶久生情</a> <span class="info">欢迎大家测试</span>
+						<div class="time"><span>07月05日 15:14</span> <a href="javascript:;" class="del">删除</a></div>
+					</div>
+				</li>
+				<li class="item">
+					<img src="img/face.gif" class="userImg" />
+					<div class="userContent">
+						<a href="javascript:;" class="nickname">日丶久生情</a> <span class="info">新增删除广播功能</span>
+						<div class="time"><span>07月05日 15:14</span> <a href="javascript:;" class="del">删除</a></div>
+					</div>
+				</li>	
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="myFunction.js"></script>
+	<script type="text/javascript" src="action.js"></script>
+
+</body>
+</html>

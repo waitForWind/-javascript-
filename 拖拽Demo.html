@@ -1,0 +1,103 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>完美拖拽</title>
+<style type="text/css">
+html,body{overflow:hidden;}
+body,div,h2,p{margin:0;padding:0;}
+body{color:#fff;background:#000;font:12px/2 Arial;}
+p{padding:0 10px;margin-top:10px;}
+span{color:#ff0;padding-left:5px;}
+#box{position:absolute;width:300px;height:150px;background:#333;border:2px solid #ccc;top:50%;left:50%;margin:-75px 0 0 -150px;}
+#box h2{height:25px;cursor:move;background:#222;border-bottom:2px solid #ccc;text-align:right;padding:0 10px;}
+#box h2 a{color:#fff;font:12px/25px Arial;text-decoration:none;outline:none;}
+</style>
+<script type="text/javascript">
+window.onload=function ()
+{
+	var oBox=document.getElementById("box");
+	var head  = oBox.getElementsByTagName("h2")[0];
+	var link = oBox.getElementsByTagName("a")[0];
+	var datas = oBox.getElementsByTagName("span");	
+	var originX = originY = posX = posY = 0;
+	var canDrag = false;
+	var aPos = [{x:oBox.offsetLeft, y:oBox.offsetTop}]
+	
+	head.onmousedown = function(event){
+		event = event || window.event;
+		canDrag = true;
+		originX = event.clientX;
+		originY = event.clientY;
+		posX = oBox.offsetLeft;
+		posY = oBox.offsetTop; 
+		this.setCapture && this.setCapture();
+		// console.log(originX);
+		status();
+		// return false;
+	}
+
+	document.onmousemove = function(event){
+		event = event || window.event;
+		if(!canDrag) return false;
+		//计算出两次移动之差
+		var moveX = event.clientX - originX;
+		var moveY = event.clientY - originY;
+
+		//计算出之后再用拖拽元素之前所在x,y位置的值加上移动值
+		var left = posX + moveX;
+		var top = posY + moveY;	
+		var maxL = document.documentElement.clientWidth - oBox.offsetWidth;
+		var maxT = document.documentElement.clientHeight - oBox.offsetHeight;
+
+		//限定x轴移动范围
+		if(left < 0){
+			left = 0;
+		}else if(left > maxL){
+			left = maxL;
+		}
+
+		//限定y轴移动范围
+		if(top < 0){
+			top = 0;
+		}else if(top > maxT){
+			top = maxT;
+		}
+
+		oBox.style.margin = 0;
+		oBox.style.left = left + "px";
+		oBox.style.top = top + "px";
+		status();
+		// return false;
+	};
+
+	document.onmouseup = window.onblur = head.onlosecapture = function ()
+	{
+		canDrag = false;	
+		status();			
+		head.releaseCapture && head.releaseCapture();
+		
+	};
+
+	function status(){
+		datas[0].innerHTML = canDrag.toString();
+		datas[1].innerHTML = oBox.offsetLeft + "px";
+		datas[2].innerHTML = oBox.offsetTop + "px";
+	}
+
+	//初始调用一次status
+	status();
+
+}
+</script>
+</head>
+<body>
+<div id="box">
+    <h2><a href="javascript:;">拖动窗口</a></h2>
+    <p><strong>Drag:</strong><span></span></p>
+    <p><strong>offsetTop:</strong><span></span></p>
+    <p><strong>offsetLeft:</strong><span></span></p>
+</div>
+</body>
+</html>

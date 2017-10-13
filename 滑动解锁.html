@@ -1,0 +1,87 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>iPhone手机解锁效果</title>
+<style type="text/css">
+#iphone{position:relative;width:426px;height:640px;margin:10px auto;background:url(http://fgm.cc/iphone/1.jpg) no-repeat;}
+#lock{position:absolute;left:50%;bottom:33px;width:358px;height:62px;margin-left:-179px;}
+#lock span{position:absolute;width:93px;height:62px;cursor:pointer;background:url(http://fgm.cc/iphone/btn.jpg) no-repeat;}
+</style>
+<script type="text/javascript">
+window.onload = function (){
+	var iPhone = document.getElementById("iphone");
+	var oLock = document.getElementById("lock");
+	var oBtn = oLock.getElementsByTagName("span")[0];
+	var originalX = 0;
+	var originalLeft = oBtn.offsetLeft;
+	var maxLen = oLock.offsetWidth - oBtn.offsetWidth;
+	var lockLen = oLock.offsetWidth;
+	
+	oBtn.onmousedown = function(event){
+		event = event || window.event;
+		originalX = event.clientX;
+		document.onmousemove = function(event){
+			event = event || window.event;
+			var currentX = event.clientX;
+			//左边的绝对位置等于鼠标之间的移动距离+元素元素的偏移位置
+			var left = currentX - originalX + originalLeft;
+			(left < 0) && (left = 0);
+			(left > maxLen) && (left = maxLen)
+			oBtn.style.left = left + "px";
+			if(left == maxLen){
+				unlock();
+			}
+
+		}
+
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+			oBtn.releaseCapture && oBtn.releaseCapture();
+			if(oBtn.offsetLeft > lockLen/2){
+				move(oBtn, maxLen, unlock);
+			}else{
+				move(oBtn, 0);
+			}	
+		}
+	}
+
+	/**
+	 * 执行滑块动作的函数
+	 * @param  {[Node]}   obj    [一个节点类型的对象]
+	 * @param  {[number]}   target [目标的最终值]
+	 * @param  {Function} fn     [回调函数]
+	 * @return {[none]}          [无返回值]
+	 */
+	function move(obj, target, fn){
+		obj.timer = setInterval(function(){
+			var currentMove = parseInt(obj.style.left);
+			var speed = (target - currentMove) / 5;
+			speed = speed < 0 ? Math.floor(speed) : Math.ceil(speed);
+			if(currentMove == target){
+				fn && fn();
+				clearInterval(obj.timer);
+			}else{
+				obj.style.left = currentMove + speed + "px";
+			}
+		}, 30);
+		
+	}
+
+	//解锁函数，换背景，删除滑块
+	function unlock(){
+		iPhone.style.background = "url(http://fgm.cc/iphone/2.jpg)";
+		oBtn.style.display = "none";
+	}
+	
+};
+</script>
+</head>
+<body>
+<div id="iphone">
+	<div id="lock"><span></span></div>
+</div>
+</body>
+</html>

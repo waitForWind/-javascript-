@@ -1,0 +1,188 @@
+body,p,h2,{
+	margin: 0;
+}
+a{
+	text-decoration: none;
+}
+ul{
+	list-style: none;
+}
+input{
+	box-sizing: content-box;
+}
+img{
+	border: none;
+}
+body{
+	background: #3c3a3b;
+	color:#333;
+	font: 14px/1.5 "Microsoft YaHei","SimHei","SimSun","Arial"; 
+}
+
+#main{
+	width: 500px;
+	margin: 10px auto;
+	padding-top: 10px;
+	border-radius: 5px;
+	background: #fff;
+}
+div#header,div#fbody{
+	padding: 0 20px 10px;
+}
+#faces img{
+	width: 40px;
+	margin-right: 5px;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+#faces img.current,#faces img.hover{
+	border: 1px solid #f30;
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+h2.title{
+	font-size: 18px;
+	color: #666;
+	font-weight: 500;
+}
+input#username{
+	width: 182px;
+	height: 28px;
+	line-height: 28px;
+	border-radius:6px;
+	border: 1px solid #d0d0d0;
+	padding: 3px 5px;
+	margin-top: 15px;
+}
+
+#conBox,input#username{
+		background: url(./img/inputBG.png)  repeat-x;
+	
+}
+#conBox{
+	width: 460px;
+	height: 78px;
+	border: 1px solid #d0d0d0;
+	margin-top: 15px;
+	resize:none;
+	font-family: "Microsoft YaHei";
+	color: #555;
+	font-size: 14px;
+	border-radius: 4px;
+	padding: 4px;
+	box-sizing: border-box;
+	overflow: auto;
+}
+p#limit{
+	color:#999;
+	display: inline-block;
+}
+#formFooter{
+	text-align: right;
+}
+.limitNum{
+	font: 26px/30px "Georgia","Arial";
+	width: 46px;
+	height: 30px;
+	display: inline-block;
+	text-align: center;
+}
+input[type="submit"]{
+	width: 100px;
+	height: 28px;
+	background: url(img/btn.png) no-repeat;
+	margin: 10px 0 0 10px;
+	position: relative;
+	top: 5px;
+	border: none;
+
+}
+input[type="submit"].hover{
+	background-position: 0 -30px; 
+}
+#header{
+	background: url(./img/boxBG.jpg) bottom left repeat-x;
+	padding-bottom: 20px;
+
+}
+#fbody{
+	margin-top: 10px;
+}
+.colorBlock{
+	height: 34px;
+	width: 100%;
+	background: #e3eaec;
+	border: 1px solid #dee4e7;
+	box-sizing: border-box;
+}
+.del{
+	float: right;
+	display: none;
+}
+
+#fbody .sTitle{
+	background: white;
+	padding: 2px 15px;
+	position: relative;top: 10px;left: 8px;
+	font-size: 16px;
+}
+.commentList{
+	margin-left:0;
+	padding-left: 0;
+	overflow: hidden;
+}
+.commentList li{
+	font-family: Arial;
+	border-bottom: 1px dashed #ddd;
+	float: left;
+	width: 100%;
+	// clear: both;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	margin-top: 15px;
+
+}
+.userContent{
+	float: left;
+	margin-left: 10px;
+    width: 390px;
+    word-wrap: break-word;
+}
+.userContent .info{
+	word-wrap: break-word;
+	display: inline-block;
+}
+.nickname{
+	color: #2b4a78;
+	margin-right: 10px;
+}
+.userImg{
+	float: left;
+}
+.time,.del{
+	color: #889db6;
+	
+}
+
+li.hover .del{
+	display: inline;
+}
+.time{
+	font-size: 12px;
+	overflow: hidden;
+	margin-top: 8px;	
+}
+.clearfix{
+	content: "";
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+
+.item{
+	clear: both;
+}
+
+#cForm .focus{
+	border: 1px solid #7abb2c;
+}

@@ -1,0 +1,104 @@
+body,ul{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: #3e3e3e;
+}
+ul{
+	list-style: none;
+	// background: red;
+}
+div.show{
+	height: 144px;
+	width: 600px;
+	overflow: hidden;
+	margin: 20px auto 40px;
+	position: relative;
+}
+.show .list{
+	position: absolute;
+	overflow: hidden;
+}
+.container{
+	width: 600px;
+	margin: 0 auto;
+}
+.show li{
+	width: 144px;
+	height: 144px;
+	background: #000;
+	margin-right: 6px;
+	float: left;
+	text-align: center;
+	color: white;
+	border-radius: 6px;
+}
+.show img{
+	border-radius: 6px;
+	margin-top: 10px;
+}
+.show li p{
+	margin-top: 8px; 
+}
+.scrollBar{
+	height: 19px;
+	width: 600px;
+	position: relative;
+}
+.barL,.barR{
+	position: absolute;
+	background: url(img/03.gif);
+	height: 19px;
+	width: 28px;
+	// z-index: -1;
+}
+.barR{
+	// top: 0;
+	right: 0;
+	background-position:28px 0; 
+}
+.barL{
+	left: 0;
+}
+.barL.stop{
+	background-position: 0 -19px; 
+}
+.barR.stop{
+	background-position: 28px -19px;
+}
+.barM{
+	// margin-left: 10px;
+	position: absolute;
+	left: 28px;
+	background: #000;
+	height: 17px;
+	width: 544px;
+	border-top:1px solid #545454;
+	border-bottom:1px solid #545454;
+}
+.barBlock{
+	width: 150px;
+	background: url(img/01.gif) repeat-x;
+	position: relative;
+	margin-top: 1px ;
+	cursor: e-resize;
+}
+.barBlock,.barBlockL,.barBlockR{
+	height: 15px;
+}
+.barBlockL,.barBlockR{
+	position: absolute;
+	width: 6px;
+	background: url(img/02.gif);
+}
+.barBlockL{
+	left: -6px;
+}
+.barBlockR{
+	right: -6px;
+	background-position: 6px 0;
+}
+
+#desc{color:#fff;width:578px;padding:10px;margin:40px auto;line-height:2;border:1px dashed #666;}
+#desc dd{margin-left:2em;}
